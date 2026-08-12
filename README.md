@@ -2,13 +2,13 @@
 
 [Français](#français) · [English](#english)
 
-Web dashboard to analyze a **GitHub account** or a **repository**: languages, commits, contributors, issues, pull requests, and releases.
-
 Tableau de bord web pour analyser un **compte GitHub** ou un **dépôt** : langages, commits, contributeurs, issues, pull requests et releases.
 
-**Stack:** Next.js (App Router) · React · JavaScript · Recharts  
+Web dashboard to analyze a **GitHub account** or a **repository**: languages, commits, contributors, issues, pull requests, and releases.
 
-**License:** [Apache License 2.0](LICENSE)
+**Stack :** Next.js (App Router) · React · JavaScript · Recharts  
+
+**Licence / License :** [Apache License 2.0](LICENSE)
 
 ---
 
