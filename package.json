@@ -1,0 +1,31 @@
+{
+  "name": "github-analytics",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "jest",
+    "test:unit": "jest Tests/unit",
+    "test:system": "jest Tests/system",
+    "test:watch": "jest --watch",
+    "quality": "npm run lint && npm run test:unit"
+  },
+  "dependencies": {
+    "next": "15.5.23",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
+    "@eslint/eslintrc": "^3",
+    "babel-jest": "^30.4.1",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.23",
+    "jest": "^30.4.2"
+  }
+}
