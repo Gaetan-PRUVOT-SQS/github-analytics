@@ -31,11 +31,14 @@ Plan : `docs/tests/plan.md`
 Dossier : `Tests/`
 
 ```bash
-# tous les tests (unitaires + système ; le système se skip si pas de serveur)
+# tous les tests (unitaires + fonctionnels + système)
 npm test
 
 # unitaires seuls
 npm run test:unit
+
+# fonctionnels (parcours métier ; une partie nécessite le serveur)
+npm run test:functional
 
 # système (nécessite npm run dev sur le port 3000)
 npm run dev
