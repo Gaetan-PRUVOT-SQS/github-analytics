@@ -13,7 +13,8 @@
     "test:functional": "jest Tests/functional",
     "test:system": "jest Tests/system",
     "test:watch": "jest --watch",
-    "quality": "npm run lint && npm run test:unit && npm run test:functional"
+    "quality": "npm run lint && npm run test:unit && npm run build && npm run test:server",
+    "test:server": "node scripts/test-server.mjs"
   },
   "dependencies": {
     "next": "15.5.28",
