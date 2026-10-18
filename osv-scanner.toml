@@ -1,0 +1,8 @@
+# Exemption accepted in writing by Gaetan on 2026-10-18 (decision D-003, /workspace/validateur/registres/decisions.md).
+# braces 3.0.3 is a dev-only dependency (eslint-config-next > @next/eslint-plugin-next > fast-glob 3.3.1 > micromatch 4.0.8)
+# used with fixed lint glob patterns only, never with user input, and no fixed release exists yet.
+# Checked every week for a fixed release; remove this entry as soon as one is available.
+[[IgnoredVulns]]
+id = "GHSA-vfj7-8cjw-p6xm"
+ignoreUntil = 2026-11-17T23:59:59Z
+reason = "Dev-only lint dependency with fixed patterns, no fixed release yet. Decision D-003 by Gaetan, 2026-10-18, expires 2026-11-17."

@@ -1,0 +1,5 @@
+# Faux positifs revus : jeton GitHub volontairement invalide (ghp_INVALIDTOKEN...)
+# utilisé par les anciens tests « token invalide : 401 ». Ce n'est pas un vrai secret,
+# il n'a jamais été valide. Les tests actuels utilisent un faux token hors format PAT.
+5883af2fa984b8f2220e2c35d6232fa2f531bd29:Tests/functional/errors.functional.test.js:github-pat:68
+4970da1f900aa3fac18cb51acfd074ed79686ba8:Tests/system/api.system.test.js:github-pat:143

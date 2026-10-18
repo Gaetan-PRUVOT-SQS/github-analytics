@@ -38,7 +38,7 @@ Web dashboard to analyze a **GitHub account** or a **repository**: languages, co
 
 ### Prérequis
 
-- [Node.js](https://nodejs.org/) 18+
+- [Node.js](https://nodejs.org/) 24 (version exacte dans `.nvmrc`, 24.22.0 ou plus récent en 24.x)
 - npm
 - (Optionnel) un [token GitHub](https://github.com/settings/tokens)
 
@@ -73,8 +73,9 @@ Ouvre [http://localhost:3000](http://localhost:3000).
 | `npm run build` | Build de production |
 | `npm start` | Serveur de production (après build) |
 | `npm run lint` | ESLint |
-| `npm test` | Tous les tests |
-| `npm run quality` | Lint + tests unitaires + tests fonctionnels |
+| `npm run test:unit` | Tests unitaires |
+| `npm run test:server` | Tests fonctionnels et système (après build) |
+| `npm run quality` | Lint + tests unitaires + build + tests fonctionnels et système |
 
 ### Utilisation
 
@@ -129,12 +130,14 @@ Plan : [`docs/tests/plan.md`](docs/tests/plan.md)
 
 ```bash
 npm run test:unit
-npm run test:functional
-npm run test:system    # nécessite npm run dev
-npm test
+npm run build
+npm run test:server    # next start sur 127.0.0.1 + faux GitHub local
 ```
 
-Fixtures publiques uniquement (`octocat`, `facebook/react`, `vercel/next.js`).
+Les tests fonctionnels et système tournent contre un vrai `next start`, branché sur un faux GitHub
+qui rejoue des réponses figées : aucun appel au vrai GitHub, aucune limite d'API. Sans serveur, ils
+échouent. Données publiques uniquement (`octocat`, `nodejs/node`, `vercel/next.js`, et
+`facebook/react` pour le cas du dépôt transféré).
 
 ### Sécurité et qualité
 
@@ -147,7 +150,7 @@ npm run quality
 - Validation des entrées (owner, repo, user)
 - Tokens nettoyés, jamais loggés
 - En-têtes HTTP de sécurité
-- CI GitHub Actions (lint, tests, build)
+- CI GitHub Actions (lint, tests unitaires, build, tests fonctionnels et système), actions épinglées par SHA
 
 ### Licence
 
@@ -182,7 +185,7 @@ Voir le fichier [LICENSE](LICENSE).
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) 18+
+- [Node.js](https://nodejs.org/) 24 (exact version in `.nvmrc`, 24.22.0 or a newer 24.x)
 - npm
 - (Optional) a [GitHub token](https://github.com/settings/tokens)
 
@@ -217,8 +220,9 @@ Open [http://localhost:3000](http://localhost:3000).
 | `npm run build` | Production build |
 | `npm start` | Production server (after build) |
 | `npm run lint` | ESLint |
-| `npm test` | All tests |
-| `npm run quality` | Lint + unit + functional tests |
+| `npm run test:unit` | Unit tests |
+| `npm run test:server` | Functional and system tests (after build) |
+| `npm run quality` | Lint + unit tests + build + functional and system tests |
 
 ### Usage
 
@@ -273,12 +277,13 @@ Plan: [`docs/tests/plan.md`](docs/tests/plan.md)
 
 ```bash
 npm run test:unit
-npm run test:functional
-npm run test:system    # requires npm run dev
-npm test
+npm run build
+npm run test:server    # next start on 127.0.0.1 + local fake GitHub
 ```
 
-Public fixtures only (`octocat`, `facebook/react`, `vercel/next.js`).
+Functional and system tests run against a real `next start` wired to a fake GitHub that replays
+fixed responses: no call to the real GitHub, no rate limit. Without a server they fail. Public data
+only (`octocat`, `nodejs/node`, `vercel/next.js`, and `facebook/react` for the transferred repo case).
 
 ### Security and quality
 
@@ -291,7 +296,7 @@ npm run quality
 - Input validation (owner, repo, user)
 - Sanitized tokens (never logged)
 - Security HTTP headers
-- GitHub Actions CI (lint, tests, build)
+- GitHub Actions CI (lint, unit tests, build, functional and system tests), actions pinned by SHA
 
 ### License
 
