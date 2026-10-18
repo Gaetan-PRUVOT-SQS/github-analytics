@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">=24.22.0 <25"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
@@ -13,10 +16,11 @@
     "test:functional": "jest Tests/functional",
     "test:system": "jest Tests/system",
     "test:watch": "jest --watch",
-    "quality": "npm run lint && npm run test:unit && npm run test:functional"
+    "quality": "npm run lint && npm run test:unit && npm run build && npm run test:server",
+    "test:server": "node scripts/test-server.mjs"
   },
   "dependencies": {
-    "next": "15.5.23",
+    "next": "15.5.28",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "recharts": "^3.10.1"
@@ -27,7 +31,17 @@
     "@eslint/eslintrc": "^3",
     "babel-jest": "^30.4.1",
     "eslint": "^9",
-    "eslint-config-next": "15.5.23",
+    "eslint-config-next": "15.5.28",
     "jest": "^30.4.2"
+  },
+  "overrides": {
+    "postcss": "^8.5.23",
+    "brace-expansion@1": "^1.1.21",
+    "brace-expansion@2": "^2.1.7",
+    "brace-expansion@5": "^5.0.12",
+    "js-yaml@4": "^4.3.2",
+    "@istanbuljs/load-nyc-config": {
+      "js-yaml": "^4.3.2"
+    }
   }
 }
