@@ -17,7 +17,7 @@ import {
 
 var { sumPercents, namesOf } = require("../helpers/assert");
 
-describe("TC-U-STATS — languagesToPercent", function () {
+describe("TC-U-STATS : languagesToPercent", function () {
   test("TC-U-STATS-01 objet vide → liste vide", function () {
     var result = languagesToPercent({});
     expect(result.languageCount).toBe(0);
@@ -63,7 +63,7 @@ describe("TC-U-STATS — languagesToPercent", function () {
   });
 });
 
-describe("TC-U-STATS — isDocumentationOnly / markLanguageAnalysis", function () {
+describe("TC-U-STATS : isDocumentationOnly / markLanguageAnalysis", function () {
   test("TC-U-STATS-05 Markdown seul → documentationOnly", function () {
     var analysis = languagesToPercent({ Markdown: 1300 });
     analysis.detected = true;
@@ -83,7 +83,7 @@ describe("TC-U-STATS — isDocumentationOnly / markLanguageAnalysis", function (
   });
 });
 
-describe("TC-U-STATS — filterIssuesOnly", function () {
+describe("TC-U-STATS : filterIssuesOnly", function () {
   test("TC-U-STATS-07 exclut les pull requests de la liste issues", function () {
     var items = [
       { number: 1, title: "bug", pull_request: { url: "x" } },
@@ -95,7 +95,7 @@ describe("TC-U-STATS — filterIssuesOnly", function () {
   });
 });
 
-describe("TC-U-STATS — analyzeCommits", function () {
+describe("TC-U-STATS : analyzeCommits", function () {
   test("TC-U-STATS-08 agrège timeline et weekdays", function () {
     var commits = [
       {
@@ -132,7 +132,7 @@ describe("TC-U-STATS — analyzeCommits", function () {
   });
 });
 
-describe("TC-U-STATS — enrichContributors", function () {
+describe("TC-U-STATS : enrichContributors", function () {
   test("TC-U-STATS-10 pourcentages contributeurs", function () {
     var result = enrichContributors([
       {
@@ -155,7 +155,7 @@ describe("TC-U-STATS — enrichContributors", function () {
   });
 });
 
-describe("TC-U-STATS — formatters", function () {
+describe("TC-U-STATS : formatters", function () {
   test("TC-U-STATS-11 formatBytes", function () {
     expect(formatBytes(500)).toBe("500 o");
     expect(formatBytes(2048)).toMatch(/Ko/);
@@ -163,7 +163,7 @@ describe("TC-U-STATS — formatters", function () {
 
   test("TC-U-STATS-12 formatAge / repoAgeDays", function () {
     expect(formatAge(10)).toMatch(/jours/);
-    expect(formatAge(null)).toBe("—");
+    expect(formatAge(null)).toBe("-");
     var days = repoAgeDays("2020-01-01T00:00:00Z");
     expect(days).toBeGreaterThan(100);
   });

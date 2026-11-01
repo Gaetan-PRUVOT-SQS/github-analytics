@@ -5,7 +5,7 @@
 
 import { aggregateRepos } from "../../lib/userStats";
 
-describe("TC-U-USER — aggregateRepos", function () {
+describe("TC-U-USER : aggregateRepos", function () {
   var sampleRepos = [
     {
       name: "app-a",

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function formatDate(iso) {
   if (!iso) {
-    return "—";
+    return "-";
   }
   return iso.slice(0, 10);
 }
@@ -48,7 +48,7 @@ function UserReposList(props) {
                 <p className="muted repo-desc">{repo.description}</p>
               ) : null}
               <p className="muted">
-                {repo.language || "—"} · ★ {repo.stargazers_count} · forks{" "}
+                {repo.language || "-"} · ★ {repo.stargazers_count} · forks{" "}
                 {repo.forks_count} · push {formatDate(repo.pushed_at)}
               </p>
               <p>

@@ -1,6 +1,6 @@
 function formatDate(iso) {
   if (!iso) {
-    return "—";
+    return "-";
   }
   return iso.slice(0, 10);
 }

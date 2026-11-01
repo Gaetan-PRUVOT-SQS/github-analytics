@@ -1,11 +1,11 @@
 /**
- * Unitaire — partitions d'équivalence + table de décision
+ * Unitaire : partitions d'équivalence + table de décision
  * Module : lib/parseGitHubInput.js
  */
 
 import { parseGitHubInput } from "../../lib/parseGitHubInput";
 
-describe("TC-U-PARSE — parseGitHubInput", function () {
+describe("TC-U-PARSE : parseGitHubInput", function () {
   test("TC-U-PARSE-01 username seul → type user", function () {
     var result = parseGitHubInput("octocat");
     expect(result).toEqual({

@@ -1,11 +1,11 @@
 /**
- * Tests fonctionnels — saisie utilisateur (sans serveur)
+ * Tests fonctionnels : saisie utilisateur (sans serveur)
  * Exigence : l'app doit accepter un compte OU un dépôt (URL ou raccourci)
  */
 
 import { parseGitHubInput } from "../../lib/parseGitHubInput";
 
-describe("TF-PARSE — saisie compte ou dépôt", function () {
+describe("TF-PARSE : saisie compte ou dépôt", function () {
   test("TF-PARSE-01 l'utilisateur saisit un pseudo → analyse de compte", function () {
     var result = parseGitHubInput("octocat");
     expect(result).not.toBeNull();

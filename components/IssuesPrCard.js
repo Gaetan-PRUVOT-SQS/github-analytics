@@ -11,11 +11,11 @@ function IssuesPrCard(props) {
       <h2>Issues et pull requests ouvertes</h2>
       <div className="stats-row">
         <div className="stat">
-          <strong>{issues ? issuesCount : "—"}</strong>
+          <strong>{issues ? issuesCount : "-"}</strong>
           <span className="muted">Issues (échantillon)</span>
         </div>
         <div className="stat">
-          <strong>{pulls ? pullsCount : "—"}</strong>
+          <strong>{pulls ? pullsCount : "-"}</strong>
           <span className="muted">Pull requests</span>
         </div>
       </div>

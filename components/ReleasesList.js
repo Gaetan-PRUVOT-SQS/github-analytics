@@ -1,6 +1,6 @@
 function formatDate(iso) {
   if (!iso) {
-    return "—";
+    return "-";
   }
   return iso.slice(0, 10);
 }
@@ -27,7 +27,7 @@ function ReleasesList(props) {
               <a href={item.html_url} target="_blank" rel="noreferrer">
                 {item.tag_name}
               </a>
-              {" — "}
+              {" : "}
               {item.name || "sans titre"}
               <span className="muted"> ({formatDate(item.published_at)})</span>
             </li>

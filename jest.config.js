@@ -1,4 +1,4 @@
-/** Configuration Jest — dossier Tests/ */
+/** Configuration Jest (dossier Tests/) */
 // Babel est configuré ici et non dans babel.config.js : Next.js (Turbopack)
 // refuse de builder dès qu'un fichier de config Babel est présent.
 module.exports = {

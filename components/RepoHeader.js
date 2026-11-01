@@ -1,6 +1,6 @@
 function formatDate(iso) {
   if (!iso) {
-    return "—";
+    return "-";
   }
   return iso.slice(0, 10);
 }
@@ -33,16 +33,16 @@ function RepoHeader(props) {
           <strong>
             {repo.subscribers_count !== undefined && repo.subscribers_count !== null
               ? repo.subscribers_count
-              : "—"}
+              : "-"}
           </strong>
           <span className="muted">Abonnés</span>
         </div>
         <div className="stat">
-          <strong>{repo.license || "—"}</strong>
+          <strong>{repo.license || "-"}</strong>
           <span className="muted">Licence</span>
         </div>
         <div className="stat">
-          <strong>{repo.language || "—"}</strong>
+          <strong>{repo.language || "-"}</strong>
           <span className="muted">Langage principal</span>
         </div>
       </div>

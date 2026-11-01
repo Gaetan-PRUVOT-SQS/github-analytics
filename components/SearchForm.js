@@ -17,7 +17,7 @@ function SearchForm() {
     var parsed = parseGitHubInput(repoInput);
     if (!parsed) {
       setError(
-        "Format invalide. Compte : octocat — Dépôt : owner/repo ou URL GitHub"
+        "Format invalide. Compte : octocat, dépôt : owner/repo ou URL GitHub"
       );
       return;
     }

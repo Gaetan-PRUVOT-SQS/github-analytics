@@ -9,7 +9,7 @@ import {
   isIgnoredPath,
 } from "../../lib/detectLanguages";
 
-describe("TC-U-DETECT — languageFromPath", function () {
+describe("TC-U-DETECT : languageFromPath", function () {
   test("TC-U-DETECT-01 extensions code courantes", function () {
     expect(languageFromPath("src/app.js")).toBe("JavaScript");
     expect(languageFromPath("Main.kt")).toBe("Kotlin");
@@ -28,7 +28,7 @@ describe("TC-U-DETECT — languageFromPath", function () {
   });
 });
 
-describe("TC-U-DETECT — isIgnoredPath", function () {
+describe("TC-U-DETECT : isIgnoredPath", function () {
   test("TC-U-DETECT-04 ignore node_modules et dist", function () {
     expect(isIgnoredPath("node_modules/pkg/index.js")).toBe(true);
     expect(isIgnoredPath("dist/bundle.js")).toBe(true);
@@ -36,7 +36,7 @@ describe("TC-U-DETECT — isIgnoredPath", function () {
   });
 });
 
-describe("TC-U-DETECT — countLanguagesFromTree", function () {
+describe("TC-U-DETECT : countLanguagesFromTree", function () {
   test("TC-U-DETECT-05 compte par taille, ignore node_modules", function () {
     var tree = [
       { path: "src/a.js", type: "blob", size: 1000 },

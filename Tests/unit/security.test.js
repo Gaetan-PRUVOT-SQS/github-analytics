@@ -1,5 +1,5 @@
 /**
- * Tests sécurité — validation des entrées
+ * Tests sécurité : validation des entrées
  * Module : lib/security.js
  */
 
@@ -11,7 +11,7 @@ import {
   isSafeGithubApiPath,
 } from "../../lib/security";
 
-describe("TC-U-SEC — validateGitHubName", function () {
+describe("TC-U-SEC : validateGitHubName", function () {
   test("TC-U-SEC-01 nom valide", function () {
     var result = validateGitHubName("octocat", "user");
     expect(result.ok).toBe(true);
@@ -36,7 +36,7 @@ describe("TC-U-SEC — validateGitHubName", function () {
   });
 });
 
-describe("TC-U-SEC — validateRepoParams / username", function () {
+describe("TC-U-SEC : validateRepoParams / username", function () {
   test("TC-U-SEC-05 repo valide", function () {
     var result = validateRepoParams("vercel", "next.js");
     expect(result.ok).toBe(true);
@@ -51,7 +51,7 @@ describe("TC-U-SEC — validateRepoParams / username", function () {
   });
 });
 
-describe("TC-U-SEC — sanitizeToken", function () {
+describe("TC-U-SEC : sanitizeToken", function () {
   test("TC-U-SEC-07 token simple accepté", function () {
     expect(sanitizeToken("ghp_abcdefghijklmnopqrstuvwxyz0123456789")).toBeTruthy();
   });
@@ -67,7 +67,7 @@ describe("TC-U-SEC — sanitizeToken", function () {
   });
 });
 
-describe("TC-U-SEC — isSafeGithubApiPath", function () {
+describe("TC-U-SEC : isSafeGithubApiPath", function () {
   test("TC-U-SEC-10 chemins relatifs ok", function () {
     expect(isSafeGithubApiPath("/repos/vercel/next.js")).toBe(true);
     expect(isSafeGithubApiPath("/users/octocat")).toBe(true);

@@ -9,8 +9,8 @@ function CommitDetails(props) {
     <div className="card">
       <h2>Analyse des commits</h2>
       <p className="muted">
-        Basé sur {commits.total} commits (du {commits.firstDate || "—"} au{" "}
-        {commits.lastDate || "—"}, soit {commits.spanDays} jours d&apos;échantillon).
+        Basé sur {commits.total} commits (du {commits.firstDate || "-"} au{" "}
+        {commits.lastDate || "-"}, soit {commits.spanDays} jours d&apos;échantillon).
       </p>
 
       <div className="stats-row">
@@ -46,7 +46,7 @@ function CommitDetails(props) {
           {commits.topDays.map(function (day) {
             return (
               <li key={day.date}>
-                {day.date} — <strong>{day.count}</strong> commit(s)
+                {day.date} : <strong>{day.count}</strong> commit(s)
                 <div className="bar-track">
                   <div
                     className="bar-fill"
@@ -72,7 +72,7 @@ function CommitDetails(props) {
           {commits.topAuthors.map(function (author) {
             return (
               <li key={author.login}>
-                {author.login} — {author.count} ({author.percent}%)
+                {author.login} : {author.count} ({author.percent}%)
                 <div className="bar-track">
                   <div
                     className="bar-fill bar-fill-green"

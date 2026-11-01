@@ -5,7 +5,7 @@ function UserSummary(props) {
     return null;
   }
 
-  var dominant = "—";
+  var dominant = "-";
   if (stats.languagesByRepos && stats.languagesByRepos.dominant) {
     var d = stats.languagesByRepos.dominant;
     dominant = d.name + " (" + (d.percentLabel || d.percent + " %") + " des dépôts)";

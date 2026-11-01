@@ -8,14 +8,14 @@ function AnalysisSummary(props) {
     return null;
   }
 
-  var dominantLang = "—";
+  var dominantLang = "-";
   if (languages && languages.dominant) {
     var domPct =
       languages.dominant.percentLabel || languages.dominant.percent + " %";
     dominantLang = languages.dominant.name + " (" + domPct + ")";
   }
 
-  var topContributor = "—";
+  var topContributor = "-";
   if (contributors && contributors.topContributor) {
     topContributor =
       contributors.topContributor.login +
@@ -24,11 +24,11 @@ function AnalysisSummary(props) {
       "%)";
   }
 
-  var avgCommits = "—";
-  var peakDayLabel = "—";
-  var peakWeekdayLabel = "—";
-  var peakHourLabel = "—";
-  var authorCount = "—";
+  var avgCommits = "-";
+  var peakDayLabel = "-";
+  var peakWeekdayLabel = "-";
+  var peakHourLabel = "-";
+  var authorCount = "-";
 
   if (commits) {
     avgCommits = commits.avgOverSpan + " / jour";
@@ -47,7 +47,7 @@ function AnalysisSummary(props) {
     authorCount = String(commits.authorCount);
   }
 
-  var starsPerFork = "—";
+  var starsPerFork = "-";
   if (repo.starsPerFork !== null && repo.starsPerFork !== undefined) {
     starsPerFork = String(repo.starsPerFork);
   }
@@ -77,11 +77,11 @@ function AnalysisSummary(props) {
           <span className="muted">Stars / fork</span>
         </div>
         <div className="stat">
-          <strong>{repo.default_branch || "—"}</strong>
+          <strong>{repo.default_branch || "-"}</strong>
           <span className="muted">Branche par défaut</span>
         </div>
         <div className="stat">
-          <strong>{repo.visibility || "—"}</strong>
+          <strong>{repo.visibility || "-"}</strong>
           <span className="muted">Visibilité</span>
         </div>
       </div>
