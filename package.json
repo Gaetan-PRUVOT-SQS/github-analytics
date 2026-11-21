@@ -20,7 +20,7 @@
     "test:server": "node scripts/test-server.mjs"
   },
   "dependencies": {
-    "next": "15.5.28",
+    "next": "15.5.29",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "recharts": "^3.10.1"
